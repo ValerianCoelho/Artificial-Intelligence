@@ -1,8 +1,6 @@
 def best_first_search(start, goal, graph):
     visited = []
-    open = [
-        ([start], 0)
-    ]  # this is a list of tuples, where each tuple is a path and its cost
+    open = [([start], 0)]  # this is a list of tuples, where each tuple is a path and its cost
     while open:  # when open is empty, the search is over and there is no solution
         print(open)
         path, cost = open.pop(0)
