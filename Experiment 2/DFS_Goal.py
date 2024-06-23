@@ -7,12 +7,11 @@ def dfs(graph, start, goal):
             visited.append(node)
             if node == goal: break
             neighbours = graph[node]
-            for neighbour in neighbours:
-                stack.append(neighbour)
+            stack.extend(reversed(neighbours))
     return visited
 
 start = "A"
-goal = "G"
+goal = "E"
 graph = {
     "A": ["B", "C"],
     "B": ["D", "E"],

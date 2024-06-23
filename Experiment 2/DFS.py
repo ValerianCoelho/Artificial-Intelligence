@@ -6,8 +6,7 @@ def dfs(graph, start):
         if node not in visited:
             visited.append(node)
             neighbours = graph[node]
-            for neighbour in neighbours:
-                stack.append(neighbour)
+            stack.extend(reversed(neighbours))
     return visited
 
 start = "A"
