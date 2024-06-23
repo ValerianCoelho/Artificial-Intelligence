@@ -1,4 +1,4 @@
-def best_first_search(start, goal, graph):
+def hill_climbing(start, goal, graph):
     visited = []
     open = [([start], 0)]  # this is a list of tuples, where each tuple is a path and its cost
     while open:  # when open is empty, the search is over and there is no solution
@@ -36,4 +36,4 @@ heuristic = {
     "G": 0,
 }
 
-print(best_first_search(start, goal, graph))
+print(hill_climbing(start, goal, graph))
