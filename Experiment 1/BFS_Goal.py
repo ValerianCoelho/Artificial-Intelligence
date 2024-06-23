@@ -6,13 +6,13 @@ def bfs_goal(tree, start, goal):
         if node not in visited:
             visited.append(node)
             if node == goal: break
-            neighbour = tree[node]
-            for i in neighbour:
-                queue.append(i)
+            neighbours = tree[node]
+            for neighbour in neighbours:
+                queue.append(neighbour)
     return visited
 
 start = "A"
 goal = "E"
 tree = {"A": ["B", "C"], "B": ["D"], "C": ["E"], "D": ["F"], "E": ["F"], "F": []}
 
-print("BFS Goal Traversal ", bfs_goal(tree, start, goal))
+print("BFS (Goal Search) Traversal :", bfs_goal(tree, start, goal))
