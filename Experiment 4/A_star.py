@@ -9,24 +9,30 @@ def best_first_search(start, goal, graph):
             return path
         if node not in visited:
             visited.append(node)
-            for neighbour, neighbour_heuristic, neighbour_cost in graph[node]:
+            for neighbour, neighbour_cost in graph[node]:
                 new_path = path + [neighbour]
                 new_cost = cost + neighbour_cost
                 open.append((new_path, new_cost))
-            open.sort(key=lambda x: x[1] + neighbour_heuristic)
+            open.sort(key=lambda x: x[1] + heuristic[x[0][-1]])
     return None
-
 
 start = "S"
 goal = "G"
 
-# format: {node: [(neighbour, heuristic, cost)]}
+# format: {node: [(neighbour, cost)]}
 graph = {
-    "S": [("A", 6, 1), ("B", 2, 4)],
-    "A": [("B", 2, 2), ("C", 1, 5), ("G", 0, 12)],
-    "B": [("C", 1, 2)],
-    "C": [("G", 0, 3)],
+    "S": [("A", 1), ("B", 4)],
+    "A": [("B", 2), ("C", 5), ("G", 12)],
+    "B": [("C", 2)],
+    "C": [("G", 3)],
     "G": [],
+}
+heuristic = {
+    "S": 7,
+    "A": 6,
+    "B": 2,
+    "C": 1,
+    "G": 0,
 }
 
 print(best_first_search(start, goal, graph))
