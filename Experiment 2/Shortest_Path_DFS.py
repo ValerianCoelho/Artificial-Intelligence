@@ -1,4 +1,4 @@
-def dfsShortestPath(graph):
+def shortest_path_dfs(graph):
     paths = []
     visited = []
     stack = [[start]]
@@ -26,7 +26,7 @@ graph = {
     'I' : []
 }
 
-start = input("Enter start node : ")
-goal = input("Enter goal node  : ")
+start = "A"
+goal = "H"
           
-print(f"Shortest DFS Path is : {dfsShortestPath(graph)}")
+print(f"Shortest DFS Path is : {shortest_path_dfs(graph)}")
