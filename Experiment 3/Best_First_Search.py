@@ -18,7 +18,7 @@ def best_first_search(start, goal, graph):
 
 
 start = "A"
-goal = "H"
+goal = "k"
 
 # format: {node: [(neighbour, heuristic)]}
 graph = {
@@ -29,6 +29,7 @@ graph = {
     "E": [("H", 0)],
     "F": [("H", 0)],
     "G": [("H", 0)],
+    "H": []
 }
 
 print(best_first_search(start, goal, graph))
